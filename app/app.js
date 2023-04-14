@@ -7,6 +7,7 @@ import ejs from "ejs";
 import * as url from "url";
 import path from "path";
 import routeHome from "./routes/backoffice.routes.js"
+import route from "./routes/home.routes.js"
 
 dotenv.config()
 
@@ -24,6 +25,7 @@ app.set("views", path.join(__dirname,"views"))
 //Middleware
 app.use(express.json())
 app.use(passport.initialize())
+app.use(express.static(__dirname + '../public'))
 
 //Routes
 app.use("/auth",passport.authenticate("auth-google",{
@@ -33,5 +35,6 @@ app.use("/auth",passport.authenticate("auth-google",{
 }),loginRouter)
 
 app.use("/", routeHome)
+app.use("/", route)
 
 export default app;
