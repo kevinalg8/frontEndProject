@@ -8,6 +8,7 @@ import * as url from "url";
 import path from "path";
 import routeHome from "./routes/backoffice.routes.js"
 import route from "./routes/home.routes.js"
+import dash from "./routes/dashboard.routes.js";
 
 dotenv.config()
 
@@ -36,5 +37,6 @@ app.use("/auth",passport.authenticate("auth-google",{
 
 app.use("/", routeHome)
 app.use("/", route)
+app.use("/dashboard", dash)
 
 export default app;

@@ -11,10 +11,10 @@ route.get('/blog', (req,res)=>{
 route.get('/contact', (req,res)=>{
     res.render("contact")
 })
-route.get('/index', (req,res)=>{
+route.get('/', (req,res)=>{
     res.render("index")
 })
-route.get('/services', (req,res)=>{
-    res.render("services")
+route.get('/service', (req,res)=>{
+    res.render("service")
 })
 export default route

@@ -8,5 +8,6 @@ loginRouter.get("/google", (req,res)=> {
         email = req.user.emails[0].value;
     
         res.render("backoffice",{nombre:name});
+        res.redirect("backoffice")
 })
 export {loginRouter}
